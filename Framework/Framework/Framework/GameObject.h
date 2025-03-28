@@ -14,6 +14,7 @@ public:
 	Vector2 GetPosition()  { return position; }
 	char GetCharToPrint()  { return charToPrint; }
 
+
 	virtual void Render();
 	virtual void Update() {}
 };
