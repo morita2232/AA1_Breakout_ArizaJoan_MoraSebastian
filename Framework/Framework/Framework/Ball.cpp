@@ -2,19 +2,23 @@
 
 Vector2 Ball::CalculateCollision( GameObject* other)
 {
-	int vertical = 0;
-	int horizontal = 0;
+	int vertical = 0; //Asignacion del rebote en eje Y
+	int horizontal = 0;//Asignacion del rebote en eje X
 
 	for ( int i=0;i < objects.size();i++) {
 		//Check verticals
-		bool top = (other->GetPosition() + Vector2(0, -1)) == objects[i]->GetPosition();
-		bool bottom = (other->GetPosition() + Vector2(0, 1)) == objects[i]->GetPosition();
+		bool top = (other->GetPosition() + Vector2(-1, 0)) == objects[i]->GetPosition();
+		bool bottom = (other->GetPosition() + Vector2(1, 0)) == objects[i]->GetPosition();
 		vertical += (int)top + (int)bottom;
 
 		//Check horizontals
-		bool left = (other->GetPosition() + Vector2(-1, 0)) == objects[i]->GetPosition();
-		bool right = (other->GetPosition() + Vector2(1, 0)) == objects[i]->GetPosition();
+		bool left = (other->GetPosition() + Vector2(0, -1)) == objects[i]->GetPosition();
+		bool right = (other->GetPosition() + Vector2(0, 1)) == objects[i]->GetPosition();
 		horizontal += (int)left + (int)right;
+		if ((other->GetPosition() + Vector2(-1, 0)) == objects[i]->GetPosition() || (other->GetPosition() + Vector2(1, 0)) == objects[i]->GetPosition())
+		{
+			int a = 4;
+		}
 	}
 
 	Vector2 outDir = direction;
@@ -25,10 +29,20 @@ Vector2 Ball::CalculateCollision( GameObject* other)
 		horizontal = rand() % 2 > 0;
 	}
 
-	if (vertical >= horizontal)
-		outDir.x = -outDir.x;
-	if (horizontal > vertical)
+	
+
+	if (vertical > horizontal)
+	{ 
 		outDir.y = -outDir.y;
+	}
+	if (horizontal > vertical) {
+		outDir.x = -outDir.x;
+	}
+	if (horizontal == vertical) {
+		outDir.y = -outDir.y;
+		outDir.x = -outDir.x;
+	}
+
 
 	return outDir;
 }
