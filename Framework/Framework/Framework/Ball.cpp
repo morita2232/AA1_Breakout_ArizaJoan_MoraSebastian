@@ -69,7 +69,6 @@ void Ball::Update()
 			if (Brick* b = dynamic_cast<Brick*>(go)) {
 				direction = CalculateCollision(go);
 				b->Destroy();
-				b->GetDestroyed();
 			}
 
 			if (Pad* p = dynamic_cast<Pad*>(go)) {
