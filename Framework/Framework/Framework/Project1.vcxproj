@@ -144,11 +144,13 @@
     <ClInclude Include="ConsoleControl.h" />
     <ClInclude Include="CreditsScene.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="GameplayScene.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Pad.h" />
     <ClInclude Include="RankingScene.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>

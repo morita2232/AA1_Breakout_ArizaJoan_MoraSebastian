@@ -12,6 +12,9 @@ public:
 		nextScene = "Menu";
 		//Constructor TODO -> load scores
 	}
+
+	//SETTER
+
 	~RankingScene() = default; //Destructor TODO -> save scores
 	void Update() override;
 	void Render() override;

@@ -2,6 +2,8 @@
 
 void GameplayScene::OnEnter()
 {
+	gameManager.life = 3;
+
 	//Wall generation
 	for (int i = 0; i < MAP_SIZE; i++) {
 		Wall* topWall = new Wall(Vector2(i, 0), YELLOW, false);
@@ -27,17 +29,26 @@ void GameplayScene::OnEnter()
 	objects.push_back(new Pad(Vector2(MAP_SIZE / 2, (MAP_SIZE * 3) / 4), WHITE, 1, MAP_SIZE));
 	
 	//BALL
-	objects.push_back(new Ball(Vector2(2, MAP_SIZE / 2), WHITE, objects));
+	objects.push_back(new Ball(Vector2(2, MAP_SIZE / 2), WHITE, objects, gameManager));
 }
 
 void GameplayScene::Update()
 {
 	Scene::Update();
+
+	if (gameManager.life <= 0) {
+		
+		finished = true;
+
+		nextScene = "Menu";
+	}
+
 }
 
 void GameplayScene::Render()
 {
 	Scene::Render();
+
 }
 
 void GameplayScene::OnExit()
