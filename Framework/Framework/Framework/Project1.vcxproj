@@ -132,6 +132,7 @@
     <ClCompile Include="ConsoleControl.cpp" />
     <ClCompile Include="CreditsScene.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GameplayScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />

@@ -3,6 +3,8 @@
 void GameplayScene::OnEnter()
 {
 	gameManager.life = 3;
+	gameManager.score = 0;
+	gameManager.combo = 0;
 
 	//Wall generation
 	for (int i = 0; i < MAP_SIZE; i++) {
@@ -38,9 +40,15 @@ void GameplayScene::Update()
 
 	if (gameManager.life <= 0) {
 		
-		finished = true;
 
-		nextScene = "Menu";
+		if (scenes["GameOver"])
+			delete scenes["GameOver"];
+
+		scenes["GameOver"] = new GameOverScene(rankingScene, "", gameManager.score, gameManager);
+
+
+		finished = true;
+		nextScene = "GameOver";
 	}
 
 }

@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 class Scene {
 protected:

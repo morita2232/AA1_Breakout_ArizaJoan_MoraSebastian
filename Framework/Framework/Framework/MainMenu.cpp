@@ -7,6 +7,15 @@ void MenuScene::Update()
 		finished = true; //Indicates that this scene is finished
 	}
 	else if (GetAsyncKeyState('1') != 0) {
+		// Destruir la instancia anterior si existe
+		if (scenes["Gameplay"]) {
+			delete scenes["Gameplay"];
+			scenes["Gameplay"] = nullptr;
+		}
+
+		// Crear una nueva instancia
+		scenes["Gameplay"] = new GameplayScene(*gameManager, scenes, rankingScene);
+
 		nextScene = "Gameplay";
 		finished = true;
 
@@ -21,7 +30,7 @@ void MenuScene::Update()
 	nextScene = "Credits";
 	finished = true;
 	}
-	
+
 	
 }
 
