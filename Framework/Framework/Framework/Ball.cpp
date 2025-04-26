@@ -118,6 +118,7 @@ void Ball::Update()
 			if (Brick* b = dynamic_cast<Brick*>(go)) {
 				direction = CalculateCollision(go);
 				
+				gameManager.brickCounter++;
 
 				gameManager.score += 15 + (5 * gameManager.combo);
 				

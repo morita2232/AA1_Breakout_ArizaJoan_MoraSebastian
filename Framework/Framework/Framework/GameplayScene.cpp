@@ -5,6 +5,7 @@ void GameplayScene::OnEnter()
 	gameManager.life = 3;
 	gameManager.score = 0;
 	gameManager.combo = 0;
+	gameManager.brickCounter = 0;
 
 	//Wall generation
 	for (int i = 0; i < MAP_SIZE; i++) {
@@ -38,7 +39,7 @@ void GameplayScene::Update()
 {
 	Scene::Update();
 
-	if (gameManager.life <= 0) {
+	if (gameManager.life <= 0 || gameManager.brickCounter >= 39) {
 		
 
 		if (scenes["GameOver"])
@@ -50,6 +51,7 @@ void GameplayScene::Update()
 		finished = true;
 		nextScene = "GameOver";
 	}
+
 
 }
 

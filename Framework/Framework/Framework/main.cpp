@@ -24,7 +24,7 @@
 -3 vidas, si toca la pared de abajo se quita 1 vida -> LISTO
 -Si no hay vidas o no hay bloques se acaba el juego -> MEDIO LISTO
 
--Pedir el nombre del jugador cuando se acaba la partida para guardar la puntuacion
+-Pedir el nombre del jugador cuando se acaba la partida para guardar la puntuacion -> LISTO
 
 -Guardar las 5 mejores puntuaciones de forma ordenada (podemos usar un algoritmo bubble sort)
 
