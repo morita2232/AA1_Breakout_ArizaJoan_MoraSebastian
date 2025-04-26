@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include <fstream>
 
 class RankingScene : public Scene {
 protected:
@@ -7,19 +8,25 @@ protected:
 	//If you don't undestand std::pair<>, you can use another approach
 	std::vector<std::pair<std::string, int>> scores;
 	std::pair<std::string, int> userScores;
-	
+	std::fstream fileName;
+	void bubbleSort(std::vector<std::pair<std::string, int>>& v);
 
 public:
 	//SETTER
 	void PushBackScores(std::string userName, int userPoints);
 	
+	void LoadScores();
+	void SaveScores();
+
 	RankingScene() {
 		nextScene = "Menu";
-		//Constructor TODO -> load scores
+		LoadScores();
 	}
 
 
-	~RankingScene() = default; //Destructor TODO -> save scores
+	~RankingScene() {
+		SaveScores();
+	}
 	void Update() override;
 	void Render() override;
 };

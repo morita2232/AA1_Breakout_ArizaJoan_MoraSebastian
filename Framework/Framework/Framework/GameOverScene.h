@@ -3,6 +3,9 @@
 #include <string>
 #include "RankingScene.h"
 #include "GameManager.h"
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 class GameOverScene : public Scene {
 protected:
@@ -10,6 +13,7 @@ protected:
 	std::string userName;
 	RankingScene* ranking;
 	bool askedName = false;
+
 
 public:
 

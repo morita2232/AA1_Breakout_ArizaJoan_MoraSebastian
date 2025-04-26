@@ -22,11 +22,11 @@
 -Dar 5 puntos de forma acumulativa por cada bloque que destrya antes de tocar la pala -> LISTO
 
 -3 vidas, si toca la pared de abajo se quita 1 vida -> LISTO
--Si no hay vidas o no hay bloques se acaba el juego -> MEDIO LISTO
+-Si no hay vidas o no hay bloques se acaba el juego -> LISTO
 
 -Pedir el nombre del jugador cuando se acaba la partida para guardar la puntuacion -> LISTO
 
--Guardar las 5 mejores puntuaciones de forma ordenada (podemos usar un algoritmo bubble sort)
+-Guardar las 5 mejores puntuaciones de forma ordenada (podemos usar un algoritmo bubble sort) ->LISTO
 
 */
 
@@ -70,8 +70,12 @@ int main(){
 		if (currentScene->IsFinished()) { //Check if the scene is finished
 
 			currentScene->OnExit(); //IF finished, exit the scene
-			if (currentScene->GetNextScene() == "Exit") { //IF the scene wants to go to "Exit", end the game
-				return 0; //End the game
+			if (currentScene->GetNextScene() == "Exit") {
+				// Liberar memoria antes de salir
+				for (auto& pair : scenes) {
+					delete pair.second;
+				}
+				return 0; // End the game
 			}
 			currentScene = scenes[currentScene->GetNextScene()]; //Select the next scene in the map with the string
 			currentScene->OnEnter(); //Start the next scene
