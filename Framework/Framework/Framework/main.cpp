@@ -13,23 +13,6 @@
 #include "CreditsScene.h"
 
 
-//TODO
-/*
-
--Moverse con las flechas izquierda y derecha -> LISTO
-
--Cuando destruye un bloque sumar 15 puntos -> LISTO
--Dar 5 puntos de forma acumulativa por cada bloque que destrya antes de tocar la pala -> LISTO
-
--3 vidas, si toca la pared de abajo se quita 1 vida -> LISTO
--Si no hay vidas o no hay bloques se acaba el juego -> LISTO
-
--Pedir el nombre del jugador cuando se acaba la partida para guardar la puntuacion -> LISTO
-
--Guardar las 5 mejores puntuaciones de forma ordenada (podemos usar un algoritmo bubble sort) ->LISTO
-
-*/
-
 int main(){
 	srand(time(NULL));
 

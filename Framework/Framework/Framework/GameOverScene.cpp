@@ -10,15 +10,11 @@ void GameOverScene::Update() {
 	if (!askedName) {
 		std::cout << "Introduce tu nombre de jugador: ";
 		std::cin >> userName;
-		//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
 
 		userScore = gameManager.score;
 
 		if (ranking)
 			ranking->PushBackScores(userName, userScore);
-
-		// C++ program for the implementation of Bubble sort
 
 		
 		askedName = true;

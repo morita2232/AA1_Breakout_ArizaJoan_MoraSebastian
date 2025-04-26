@@ -12,6 +12,7 @@ class MenuScene : public Scene {
 	RankingScene* rankingScene;
 
 public:
+	//constructor
 	MenuScene(std::map<std::string, Scene*>& _scenes, GameManager* _gameManager, RankingScene* _rankingScene)
 		: scenes(_scenes), gameManager(_gameManager), rankingScene(_rankingScene) {}
 

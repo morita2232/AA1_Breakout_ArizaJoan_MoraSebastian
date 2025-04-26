@@ -2,6 +2,7 @@
 
 void GameplayScene::OnEnter()
 {
+	//Reseteo de variables por partida nueva
 	gameManager.life = 3;
 	gameManager.score = 0;
 	gameManager.combo = 0;
@@ -39,6 +40,7 @@ void GameplayScene::Update()
 {
 	Scene::Update();
 
+	//condicion de victoria y derrota para guardar nombre de usuario y puntuacion
 	if (gameManager.life <= 0 || gameManager.brickCounter >= 39) {
 		
 

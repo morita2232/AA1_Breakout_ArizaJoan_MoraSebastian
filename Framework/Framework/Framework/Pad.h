@@ -11,8 +11,10 @@ public:
 	Pad(Vector2 _pos, ConsoleColor c, int w, int _mapSize)
 		:GameObject(_pos, '_', c), width(w), mapSize(_mapSize) {}
 
+	//Controlador de longitud del pad
 	int GetWidth() { return width; }
 
+	//Controlador de posiciones del pad (izquerda - derecha)
 	std::vector<Vector2> GetPositions() {
 		std::vector<Vector2> positions;
 		positions.push_back(position); // centro

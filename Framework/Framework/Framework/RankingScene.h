@@ -18,12 +18,13 @@ public:
 	void LoadScores();
 	void SaveScores();
 
+	//constructor
 	RankingScene() {
 		nextScene = "Menu";
 		LoadScores();
 	}
 
-
+	//destructor
 	~RankingScene() {
 		SaveScores();
 	}

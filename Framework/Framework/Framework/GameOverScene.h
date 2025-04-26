@@ -19,14 +19,13 @@ public:
 
 	GameManager& gameManager;
 
-	//GETTER
-
+	//constructor
 	GameOverScene(RankingScene* rankingScene, std::string name, int score, GameManager& _gameManager)
 		: ranking(rankingScene), userName(name), userScore(score), gameManager(_gameManager), askedName(false) {
 
 		nextScene = "Menu";
 	}
-
+	//destructor
 	~GameOverScene() = default; //Destructor TODO -> save scores
 	
 	void Update() override;

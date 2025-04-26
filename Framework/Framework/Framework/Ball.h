@@ -18,10 +18,12 @@ public:
 
 	GameManager& gameManager;
 
+	//constructor
 	Ball(Vector2 _pos, ConsoleColor c, std::vector<GameObject*>& _objects, GameManager& _gameManager)
 		: GameObject(_pos, '@', c), objects(_objects), direction(Vector2(1, 1)), gameManager(_gameManager) {}
 
 	void Update() override;
 
+	
 	void Muerte();
 };

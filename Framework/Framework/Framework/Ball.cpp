@@ -26,6 +26,7 @@ Vector2 Ball::CalculateCollision(GameObject* other)
 		horizontal = rand() % 2;
 	}
 
+	//Esto calcula la colision dependiendo de en que zona del pad choca
 	if (Pad* p = dynamic_cast<Pad*>(other)) {
 		for (int i = 1; i <= p->GetWidth(); i++) {
 			if (position == p->GetPosition() + Vector2(i, 0)) {
@@ -58,15 +59,14 @@ Vector2 Ball::CalculateCollision(GameObject* other)
 	return outDir;
 }
 
+//Metodo para resetear la posicion de la bola y restar una vida
 void Ball::Muerte() {
 	gameManager.life--;
-	/*position.x = 6;
-	position.y = 6;*/
 
 	position = Vector2(15 / 2, 15 / 2);
 
 	direction.x = (rand() % 2) ? -1 : 1;
-	direction.y = -1;
+	direction.y = 1;
 
 	return;
 }
